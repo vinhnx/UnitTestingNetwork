@@ -31,8 +31,10 @@ extension NetworkRequest {
             .dataTask(with: request) { (data, response, error) in
                 guard let data = data else {
 
-                    error.flatMap {
-                        completion(.failure(NVError.sessionDataTask(error: $0)))
+                    DispatchQueue.main.async {
+                        error.flatMap {
+                            completion(.failure(NVError.sessionDataTask(error: $0)))
+                        }
                     }
 
                     return
@@ -53,11 +55,15 @@ extension NetworkRequest {
                     decoder.dateDecodingStrategy = .formatted(DateFormatter.customISO8601)
 
                     let model = try decoder.decode(Model.self, from: data)
-                    completion(.success(model))
+                    DispatchQueue.main.async {
+                        completion(.success(model))
+                    }
 
                 } catch (let decoderError) {
                     // error handling
-                    completion(.failure(NVError.decoder(error: decoderError)))
+                    DispatchQueue.main.async {
+                        completion(.failure(NVError.decoder(error: decoderError)))
+                    }
                 }
 
             }.resume()
