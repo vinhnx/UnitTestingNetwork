@@ -50,6 +50,7 @@
 		A3D23357212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */; };
 		A3D23358212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */; };
 		A3D23359212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */; };
+		A3D23360212ACC2500664A6E /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2335E212ACC2500664A6E /* UserTests.swift */; };
 		EFFD096D61B1D8E7744E0EBF /* Pods_UnitTestingNetworkWithStub_2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C781740986E06E79D3E7D638 /* Pods_UnitTestingNetworkWithStub_2UITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		A3D2334C212AB66500664A6E /* GithubReposRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubReposRequest.swift; sourceTree = "<group>"; };
 		A3D23350212AB67600664A6E /* GithubSnakecaseReposRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSnakecaseReposRequest.swift; sourceTree = "<group>"; };
 		A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		A3D2335E212ACC2500664A6E /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		B5199DC3B054752266BCF0D8 /* Pods-UnitTestingNetworkWithStub_2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTestingNetworkWithStub_2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTestingNetworkWithStub_2UITests/Pods-UnitTestingNetworkWithStub_2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE10B6269B0A22FC8D162988 /* Pods-UnitTestingNetworkWithStub_2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTestingNetworkWithStub_2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTestingNetworkWithStub_2Tests/Pods-UnitTestingNetworkWithStub_2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C781740986E06E79D3E7D638 /* Pods_UnitTestingNetworkWithStub_2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTestingNetworkWithStub_2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 			children = (
 				A3982A092129340300C960C4 /* Fixtures */,
 				A39829EE2129237E00C960C4 /* NetworkRequestTests.swift */,
+				A3D2335E212ACC2500664A6E /* UserTests.swift */,
 				A39829F02129237E00C960C4 /* Info.plist */,
 			);
 			path = UnitTestingNetworkWithStub_2Tests;
@@ -580,6 +583,7 @@
 				A3D23342212AB59000664A6E /* URLBuilder.swift in Sources */,
 				A3D23347212AB5E900664A6E /* RequestType.swift in Sources */,
 				A3D2334E212AB66500664A6E /* GithubReposRequest.swift in Sources */,
+				A3D23360212ACC2500664A6E /* UserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
