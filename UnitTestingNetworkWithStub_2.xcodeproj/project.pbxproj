@@ -14,7 +14,7 @@
 		A39829DF2129237A00C960C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39829DD2129237A00C960C4 /* Main.storyboard */; };
 		A39829E12129237D00C960C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39829E02129237D00C960C4 /* Assets.xcassets */; };
 		A39829E42129237D00C960C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39829E22129237D00C960C4 /* LaunchScreen.storyboard */; };
-		A39829EF2129237E00C960C4 /* UnitTestingNetworkWithStub_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39829EE2129237E00C960C4 /* UnitTestingNetworkWithStub_2Tests.swift */; };
+		A39829EF2129237E00C960C4 /* NetworkREquestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39829EE2129237E00C960C4 /* NetworkREquestTests.swift */; };
 		A39829FA2129237E00C960C4 /* UnitTestingNetworkWithStub_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39829F92129237E00C960C4 /* UnitTestingNetworkWithStub_2UITests.swift */; };
 		A3982A0F2129397800C960C4 /* vinhnx.json in Resources */ = {isa = PBXBuildFile; fileRef = A3982A0E2129397800C960C4 /* vinhnx.json */; };
 		A3D2332B212AB4AA00664A6E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332A212AB4AA00664A6E /* NetworkRequest.swift */; };
@@ -82,7 +82,7 @@
 		A39829E32129237D00C960C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A39829E52129237D00C960C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A39829EA2129237E00C960C4 /* UnitTestingNetworkWithStub_2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestingNetworkWithStub_2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A39829EE2129237E00C960C4 /* UnitTestingNetworkWithStub_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingNetworkWithStub_2Tests.swift; sourceTree = "<group>"; };
+		A39829EE2129237E00C960C4 /* NetworkREquestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkREquestTests.swift; sourceTree = "<group>"; };
 		A39829F02129237E00C960C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A39829F52129237E00C960C4 /* UnitTestingNetworkWithStub_2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestingNetworkWithStub_2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39829F92129237E00C960C4 /* UnitTestingNetworkWithStub_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingNetworkWithStub_2UITests.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				A3982A092129340300C960C4 /* Fixtures */,
-				A39829EE2129237E00C960C4 /* UnitTestingNetworkWithStub_2Tests.swift */,
+				A39829EE2129237E00C960C4 /* NetworkREquestTests.swift */,
 				A39829F02129237E00C960C4 /* Info.plist */,
 			);
 			path = UnitTestingNetworkWithStub_2Tests;
@@ -573,7 +573,7 @@
 				A3D23358212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */,
 				A3D2332F212AB4D200664A6E /* NetworkRequest.swift in Sources */,
 				A3D23343212AB59300664A6E /* NVError.swift in Sources */,
-				A39829EF2129237E00C960C4 /* UnitTestingNetworkWithStub_2Tests.swift in Sources */,
+				A39829EF2129237E00C960C4 /* NetworkREquestTests.swift in Sources */,
 				A3D2333E212AB58D00664A6E /* User.swift in Sources */,
 				A3D2333C212AB58A00664A6E /* Repository.swift in Sources */,
 				A3D23354212AB68300664A6E /* GithubUserRequest.swift in Sources */,

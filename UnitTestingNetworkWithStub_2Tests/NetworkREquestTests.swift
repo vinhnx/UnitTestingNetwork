@@ -7,10 +7,10 @@
 //
 
 import XCTest
-@testable import UnitTestingNetworkWithStub_2
 import Mockingjay
+@testable import UnitTestingNetworkWithStub_2
 
-class UnitTestingNetworkWithStub_2Tests: XCTestCase {
+class NetworkRequestTests: XCTestCase {
     var dataPath: URL?
 
     override func setUp() {
