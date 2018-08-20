@@ -41,8 +41,11 @@ extension NetworkRequest {
                 do {
                     let decoder = JSONDecoder()
 
-                    // check
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    // NOTE: actualy we should try to avoid doing this, and using `CodingKeys`
+                    // protocol enum overriding instead, because there is a perfomance cost, as per
+                    // JSONDecoder header
+                    // > "Note: Using a key decoding strategy has a nominal performance cost, as each string key has to be inspected for the `_` character."
+                    // decoder.keyDecodingStrategy = .convertFromSnakeCase
 
                     let model = try decoder.decode(Model.self, from: data)
                     completion(.success(model))
