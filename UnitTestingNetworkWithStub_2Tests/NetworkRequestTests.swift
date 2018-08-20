@@ -10,6 +10,19 @@ import XCTest
 import Mockingjay
 @testable import UnitTestingNetworkWithStub_2
 
+/*
+ NOTE:
+ by using Mockingjay's `stub(matcher, builder)` pattern
+ any request to matcher(uri()) will be swizzling to
+ our .json file instead, so no real network request
+ is called, keeping our real server intact
+
+ in this example, we choose to stub any request to
+ https://api.github.com/users/vinhnx
+ as it is our endpoint of the
+ RequestType.User.profile(username: "vinhnx")
+ */
+
 class NetworkRequestTests: XCTestCase {
     var dataPath: URL?
 
@@ -36,7 +49,6 @@ class NetworkRequestTests: XCTestCase {
             // start faking/stub
             self.stub(stubbingURL, builder)
 
-            // simulate
             let expect = XCTestExpectation(description: "expecting username matches")
             GithubUserRequest().fetchRequest(RequestType.User.profile(username: "vinhnx")) { (result) in
                 switch result {
@@ -66,11 +78,8 @@ class NetworkRequestTests: XCTestCase {
             let data = try Data.init(contentsOf: self.dataPath!, options: Data.ReadingOptions.alwaysMapped)
             let stubbingURL = uri("https://api.github.com/users/vinhnx")
             let builder = jsonData(data)
+            stub(stubbingURL, builder)
 
-            // start faking/stub
-            self.stub(stubbingURL, builder)
-
-            // simulate
             let expect = XCTestExpectation(description: "expecting user created date formatter")
             GithubUserRequest().fetchRequest(RequestType.User.profile(username: "vinhnx")) { (result) in
                 switch result {
@@ -99,11 +108,8 @@ class NetworkRequestTests: XCTestCase {
         let stubbingURL = uri("https://api.github.com/users/vinhnx")
         let customError = NSError(domain: "com.vinhnx.error.domain", code: 404, userInfo: nil)
         let builder = failure(customError)
+        stub(stubbingURL, builder)
 
-        // start faking/stub
-        self.stub(stubbingURL, builder)
-
-        // simulate
         let expect = XCTestExpectation(description: "expect to return custom error")
         GithubUserRequest().fetchRequest(RequestType.User.profile(username: "vinhnx")) { (result) in
             switch result {
