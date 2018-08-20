@@ -10,6 +10,16 @@ import XCTest
  public Github profile API "https://api.github.com/users/{user_name}"
  */
 
+extension DateFormatter {
+    static let customISO8601: DateFormatter = {
+        // created_at: "2011-10-03T01:05:57Z",
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ" // iso 8601 format
+        return dateFormatter
+    }()
+}
+
 struct Repo: Codable {
     var fullName: String?
     var owner: User?
@@ -27,10 +37,29 @@ struct SnakeCaseRepo: Codable {
 struct User: Codable {
     var userName: String?
     var bio: String?
+    var createdDate: Date?
 
     enum CodingKeys: String, CodingKey {
         case bio
         case userName = "login"
+        case createdDate = "created_at"
+    }
+}
+
+extension User {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.userName = try container.decode(String.self, forKey: .userName)
+        self.bio = try container.decode(String.self, forKey: .bio)
+
+        // custom date formatter
+        let dateString = try container.decode(String.self, forKey: .createdDate)
+        let dateFormatter = DateFormatter.customISO8601
+        if let date = dateFormatter.date(from: dateString) {
+            self.createdDate = date
+        } else {
+            throw DecodingError.dataCorruptedError(forKey: .createdDate, in: container, debugDescription: "Date string doesn not match format expected by formatter")
+        }
     }
 }
 
@@ -133,6 +162,8 @@ extension NetworkRequest {
                 // > "Note: Using a key decoding strategy has a nominal performance cost, as each string key has to be inspected for the `_` character."
                 // decoder.keyDecodingStrategy = .convertFromSnakeCase
 
+                decoder.dateDecodingStrategy = .formatted(DateFormatter.customISO8601)
+
                 let model = try decoder.decode(Model.self, from: data)
                 completion(.success(model))
 
@@ -158,32 +189,33 @@ final class GithubSnakecaseReposRequest: NetworkRequest {
 }
 
 // Test
-//GithubUserRequest().fetchRequest(RequestType.User.profile(username: "vinhnx")) { (result) in
-//    switch result {
-//    case .success(let user):
-//        user.bio
-//        user.userName
-//
-//    case .failure(let error):
-//        error.message
-//
-//    }
-//}
-
-GihubReposRequest().fetchRequest(RequestType.User.repos(username: "vinhnx")) { (result) in
+GithubUserRequest().fetchRequest(RequestType.User.profile(username: "vinhnx")) { (result) in
     switch result {
-    case .success(let repos):
-
-        repos.first.flatMap {
-            $0.fullName ?? ""
-            $0.owner?.userName ?? ""
-        }
+    case .success(let user):
+        user.bio
+        user.userName
+        user.createdDate
 
     case .failure(let error):
         error.message
 
     }
 }
+
+//GihubReposRequest().fetchRequest(RequestType.User.repos(username: "vinhnx")) { (result) in
+//    switch result {
+//    case .success(let repos):
+//
+//        repos.first.flatMap {
+//            $0.fullName ?? ""
+//            $0.owner?.userName ?? ""
+//        }
+//
+//    case .failure(let error):
+//        error.message
+//
+//    }
+//}
 
 
 //GithubSnakecaseReposRequest().fetchRequest(RequestType.User.repos(username: "vinhnx")) { (result) in
@@ -204,31 +236,29 @@ GihubReposRequest().fetchRequest(RequestType.User.repos(username: "vinhnx")) { (
 //}
 
 // XCTest
-class TestUser: XCTestCase {
-    var testUser: User!
+class UserTests: XCTestCase {
+
+    var testUser: User?
+    var testUserData: Data!
 
     // MARK: - Setup
 
     override func setUp() {
-        testUser = User(userName: "vinhnx", bio: "hello")
         super.setUp()
+        setupValues()
     }
 
     override func tearDown() {
         super.tearDown()
-        testUser = nil
+        self.testUser = nil
     }
 
     // MARK: - Test cases
 
-    func testCustomUserName() {
-        XCTAssertTrue(testUser.userName == "vinhnx")
-    }
-
     func testEncodeUserToData() {
         do {
             let encoder = JSONEncoder()
-            let data = try encoder.encode(testUser)
+            let data = try encoder.encode(self.testUser)
             XCTAssertNotNil(data)
 
         } catch (let encodingError) {
@@ -239,7 +269,7 @@ class TestUser: XCTestCase {
     func testEncodeUserToJSON() {
         do {
             let encoder = JSONEncoder()
-            let data = try encoder.encode(testUser)
+            let data = try encoder.encode(self.testUser)
 
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: Any]
@@ -257,7 +287,7 @@ class TestUser: XCTestCase {
     func testEncodeUserToJSONString() {
         do {
             let encoder = JSONEncoder()
-            let data = try encoder.encode(testUser)
+            let data = try encoder.encode(self.testUser)
 
             let jsonString = String(data: data, encoding: .utf8)
             XCTAssertNotNil(jsonString)
@@ -268,32 +298,26 @@ class TestUser: XCTestCase {
     }
 
     func testDecodeToUserFromJSONString() {
-        let data = "{\"bio\":\"hello\",\"login\":\"vinhnx\"}".data(using: .utf8)
-
         do {
             let decoder = JSONDecoder()
-            let user = try decoder.decode(User.self, from: data!)
-            XCTAssertTrue(user.userName == "vinhnx")
+            let user = try decoder.decode(User.self, from: self.testUserData)
+            XCTAssertTrue(user.createdDate == DateFormatter.customISO8601.date(from: "2011-10-03T01:05:57Z"))
         } catch (let decodingError) {
             print(decodingError)
         }
     }
+}
 
-    func testNetworkRequest() {
-        let expect = XCTestExpectation(description: "expect from network request")
-        GithubUserRequest().fetchRequest(RequestType.User.profile(username: "vinhnx")) { (result) in
-            switch result {
-            case .success(let user):
-                XCTAssertTrue(user.userName == "vinhnx")
+extension TestUser {
+    func setupValues() {
+        // IMPORTANT: order matters
+        self.testUserData = "{\"bio\": \"hello\",\"login\":\"vinhnx\",\"created_at\": \"2011-10-03T01:05:57Z\"}".data(using: .utf8)!
+        self.testUser = makeTestUser()
+    }
 
-            default:
-                break
-            }
-
-            expect.fulfill()
-        }
-
-        wait(for: [expect], timeout: 5.0)
+    func makeTestUser() -> User? {
+        let decoder = JSONDecoder()
+        return try? decoder.decode(User.self, from: self.testUserData)
     }
 }
 
