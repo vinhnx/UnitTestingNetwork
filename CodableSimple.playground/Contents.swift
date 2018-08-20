@@ -322,7 +322,7 @@ extension UserTests {
 }
 
 // Run the test
-TestUser.defaultTestSuite.run()
+UserTests.defaultTestSuite.run()
 
 // Playground config
 PlaygroundPage.current.needsIndefiniteExecution = true
