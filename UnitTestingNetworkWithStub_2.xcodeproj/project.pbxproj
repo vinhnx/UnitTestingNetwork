@@ -18,7 +18,7 @@
 		A39829FA2129237E00C960C4 /* UnitTestingNetworkWithStub_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39829F92129237E00C960C4 /* UnitTestingNetworkWithStub_2UITests.swift */; };
 		A3982A0F2129397800C960C4 /* vinhnx.json in Resources */ = {isa = PBXBuildFile; fileRef = A3982A0E2129397800C960C4 /* vinhnx.json */; };
 		A3D2332B212AB4AA00664A6E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332A212AB4AA00664A6E /* NetworkRequest.swift */; };
-		A3D2332E212AB4CB00664A6E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332D212AB4CB00664A6E /* UserModel.swift */; };
+		A3D2332E212AB4CB00664A6E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332D212AB4CB00664A6E /* User.swift */; };
 		A3D2332F212AB4D200664A6E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332A212AB4AA00664A6E /* NetworkRequest.swift */; };
 		A3D23330212AB4D200664A6E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332A212AB4AA00664A6E /* NetworkRequest.swift */; };
 		A3D23332212AB4F400664A6E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23331212AB4F400664A6E /* Repository.swift */; };
@@ -29,8 +29,8 @@
 		A3D2333B212AB58500664A6E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23334212AB53100664A6E /* Result.swift */; };
 		A3D2333C212AB58A00664A6E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23331212AB4F400664A6E /* Repository.swift */; };
 		A3D2333D212AB58A00664A6E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23331212AB4F400664A6E /* Repository.swift */; };
-		A3D2333E212AB58D00664A6E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332D212AB4CB00664A6E /* UserModel.swift */; };
-		A3D2333F212AB58D00664A6E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332D212AB4CB00664A6E /* UserModel.swift */; };
+		A3D2333E212AB58D00664A6E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332D212AB4CB00664A6E /* User.swift */; };
+		A3D2333F212AB58D00664A6E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2332D212AB4CB00664A6E /* User.swift */; };
 		A3D23341212AB59000664A6E /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23338212AB55D00664A6E /* URLBuilder.swift */; };
 		A3D23342212AB59000664A6E /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23338212AB55D00664A6E /* URLBuilder.swift */; };
 		A3D23343212AB59300664A6E /* NVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23336212AB54400664A6E /* NVError.swift */; };
@@ -47,6 +47,9 @@
 		A3D23353212AB67600664A6E /* GithubSnakecaseReposRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23350212AB67600664A6E /* GithubSnakecaseReposRequest.swift */; };
 		A3D23354212AB68300664A6E /* GithubUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2334A212AB65100664A6E /* GithubUserRequest.swift */; };
 		A3D23355212AB68300664A6E /* GithubUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D2334A212AB65100664A6E /* GithubUserRequest.swift */; };
+		A3D23357212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */; };
+		A3D23358212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */; };
+		A3D23359212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */; };
 		EFFD096D61B1D8E7744E0EBF /* Pods_UnitTestingNetworkWithStub_2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C781740986E06E79D3E7D638 /* Pods_UnitTestingNetworkWithStub_2UITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +89,7 @@
 		A39829FB2129237E00C960C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3982A0E2129397800C960C4 /* vinhnx.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vinhnx.json; sourceTree = "<group>"; };
 		A3D2332A212AB4AA00664A6E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		A3D2332D212AB4CB00664A6E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A3D2332D212AB4CB00664A6E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3D23331212AB4F400664A6E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		A3D23334212AB53100664A6E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A3D23336212AB54400664A6E /* NVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVError.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		A3D2334A212AB65100664A6E /* GithubUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserRequest.swift; sourceTree = "<group>"; };
 		A3D2334C212AB66500664A6E /* GithubReposRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubReposRequest.swift; sourceTree = "<group>"; };
 		A3D23350212AB67600664A6E /* GithubSnakecaseReposRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSnakecaseReposRequest.swift; sourceTree = "<group>"; };
+		A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B5199DC3B054752266BCF0D8 /* Pods-UnitTestingNetworkWithStub_2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTestingNetworkWithStub_2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTestingNetworkWithStub_2UITests/Pods-UnitTestingNetworkWithStub_2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE10B6269B0A22FC8D162988 /* Pods-UnitTestingNetworkWithStub_2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTestingNetworkWithStub_2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTestingNetworkWithStub_2Tests/Pods-UnitTestingNetworkWithStub_2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C781740986E06E79D3E7D638 /* Pods_UnitTestingNetworkWithStub_2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTestingNetworkWithStub_2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,7 +227,7 @@
 		A3D2332C212AB4C300664A6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3D2332D212AB4CB00664A6E /* UserModel.swift */,
+				A3D2332D212AB4CB00664A6E /* User.swift */,
 				A3D23331212AB4F400664A6E /* Repository.swift */,
 			);
 			path = Model;
@@ -236,6 +240,7 @@
 				A3D23336212AB54400664A6E /* NVError.swift */,
 				A3D23338212AB55D00664A6E /* URLBuilder.swift */,
 				A3D23345212AB5C400664A6E /* RequestType.swift */,
+				A3D23356212ACA6C00664A6E /* DateFormatter+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -550,10 +555,11 @@
 				A3D2332B212AB4AA00664A6E /* NetworkRequest.swift in Sources */,
 				A3D23332212AB4F400664A6E /* Repository.swift in Sources */,
 				A3D23339212AB55D00664A6E /* URLBuilder.swift in Sources */,
-				A3D2332E212AB4CB00664A6E /* UserModel.swift in Sources */,
+				A3D2332E212AB4CB00664A6E /* User.swift in Sources */,
 				A3D2334D212AB66500664A6E /* GithubReposRequest.swift in Sources */,
 				A3D2334B212AB65100664A6E /* GithubUserRequest.swift in Sources */,
 				A39829DA2129237A00C960C4 /* AppDelegate.swift in Sources */,
+				A3D23357212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */,
 				A3D23346212AB5C400664A6E /* RequestType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,10 +570,11 @@
 			files = (
 				A3D2333A212AB58500664A6E /* Result.swift in Sources */,
 				A3D23352212AB67600664A6E /* GithubSnakecaseReposRequest.swift in Sources */,
+				A3D23358212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */,
 				A3D2332F212AB4D200664A6E /* NetworkRequest.swift in Sources */,
 				A3D23343212AB59300664A6E /* NVError.swift in Sources */,
 				A39829EF2129237E00C960C4 /* UnitTestingNetworkWithStub_2Tests.swift in Sources */,
-				A3D2333E212AB58D00664A6E /* UserModel.swift in Sources */,
+				A3D2333E212AB58D00664A6E /* User.swift in Sources */,
 				A3D2333C212AB58A00664A6E /* Repository.swift in Sources */,
 				A3D23354212AB68300664A6E /* GithubUserRequest.swift in Sources */,
 				A3D23342212AB59000664A6E /* URLBuilder.swift in Sources */,
@@ -582,10 +589,11 @@
 			files = (
 				A3D2333B212AB58500664A6E /* Result.swift in Sources */,
 				A3D23353212AB67600664A6E /* GithubSnakecaseReposRequest.swift in Sources */,
+				A3D23359212ACA6C00664A6E /* DateFormatter+Extensions.swift in Sources */,
 				A3D23330212AB4D200664A6E /* NetworkRequest.swift in Sources */,
 				A3D23344212AB59300664A6E /* NVError.swift in Sources */,
 				A39829FA2129237E00C960C4 /* UnitTestingNetworkWithStub_2UITests.swift in Sources */,
-				A3D2333F212AB58D00664A6E /* UserModel.swift in Sources */,
+				A3D2333F212AB58D00664A6E /* User.swift in Sources */,
 				A3D2333D212AB58A00664A6E /* Repository.swift in Sources */,
 				A3D23355212AB68300664A6E /* GithubUserRequest.swift in Sources */,
 				A3D23341212AB59000664A6E /* URLBuilder.swift in Sources */,
