@@ -59,6 +59,40 @@ class NetworkRequestTests: XCTestCase {
         }
     }
 
+    func testUserCreatedDateFormatter() {
+        do {
+            var user: User?
+
+            let data = try Data.init(contentsOf: self.dataPath!, options: Data.ReadingOptions.alwaysMapped)
+            let stubbingURL = uri("https://api.github.com/users/vinhnx")
+            let builder = jsonData(data)
+
+            // start faking/stub
+            self.stub(stubbingURL, builder)
+
+            // simulate
+            let expect = XCTestExpectation(description: "expecting user created date formatter")
+            GithubUserRequest().fetchRequest(RequestType.User.profile(username: "vinhnx")) { (result) in
+                switch result {
+                case .success(let userResponse):
+                    user = userResponse
+                    XCTAssertTrue(user?.createdDate == DateFormatter.customISO8601.date(from: "2011-10-03T01:05:57Z"))
+
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                }
+
+                expect.fulfill()
+            }
+
+
+            wait(for: [expect], timeout: 10.0)
+
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
+
     func testCustomError() {
         var testingError: NSError?
 

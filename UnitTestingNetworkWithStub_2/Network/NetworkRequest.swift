@@ -47,6 +47,11 @@ extension NetworkRequest {
                     // > "Note: Using a key decoding strategy has a nominal performance cost, as each string key has to be inspected for the `_` character."
                     // decoder.keyDecodingStrategy = .convertFromSnakeCase
 
+                    // date formatter, if the formmater is in ISO 8601 format, we could use
+                    // `dateDecodingStrategy`'s `.iso8601`
+                    // but it is less customizable and iOS 10+ only
+                    decoder.dateDecodingStrategy = .formatted(DateFormatter.customISO8601)
+
                     let model = try decoder.decode(Model.self, from: data)
                     completion(.success(model))
 
