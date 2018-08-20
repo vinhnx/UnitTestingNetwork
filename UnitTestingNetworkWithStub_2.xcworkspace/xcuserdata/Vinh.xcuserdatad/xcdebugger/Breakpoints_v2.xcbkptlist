@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitTestingNetworkWithStub_2Tests/UnitTestingNetworkWithStub_2Tests.swift"
+            timestampString = "556447497.021859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "testReturnUserInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitTestingNetworkWithStub_2Tests/UnitTestingNetworkWithStub_2Tests.swift"
+            timestampString = "556447497.022812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "testReturnUserInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (UnitTestingNetworkWithStub_2.Result&lt;UnitTestingNetworkWithStub_2.User&gt;) -&gt; () in UnitTestingNetworkWithStub_2Tests.UnitTestingNetworkWithStub_2Tests.testReturnUserInfo() -&gt; ()"
+                  moduleName = "UnitTestingNetworkWithStub_2Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Vinh/dev/learn-by-doing/UnitTestingNetworkWithStub_2/UnitTestingNetworkWithStub_2Tests/UnitTestingNetworkWithStub_2Tests.swift"
+                  timestampString = "556350067.9850481"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "617">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Bool in closure #1 (UnitTestingNetworkWithStub_2.Result&lt;UnitTestingNetworkWithStub_2.User&gt;) -&gt; () in UnitTestingNetworkWithStub_2Tests.UnitTestingNetworkWithStub_2Tests.testReturnUserInfo() -&gt; ()"
+                  moduleName = "UnitTestingNetworkWithStub_2Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Vinh/dev/learn-by-doing/UnitTestingNetworkWithStub_2/UnitTestingNetworkWithStub_2Tests/UnitTestingNetworkWithStub_2Tests.swift"
+                  timestampString = "556350067.9875"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitTestingNetworkWithStub_2Tests/UnitTestingNetworkWithStub_2Tests.swift"
+            timestampString = "556447497.023602"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "testReturnUserInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
