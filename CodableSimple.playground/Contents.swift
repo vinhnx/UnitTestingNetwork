@@ -308,7 +308,7 @@ class UserTests: XCTestCase {
     }
 }
 
-extension TestUser {
+extension UserTests {
     func setupValues() {
         // IMPORTANT: order matters
         self.testUserData = "{\"bio\": \"hello\",\"login\":\"vinhnx\",\"created_at\": \"2011-10-03T01:05:57Z\"}".data(using: .utf8)!
