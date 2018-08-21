@@ -6,7 +6,12 @@ Demo on how to build a simple and tested network suite.
 1. Show how to design a clean and generic [`NetworkRequest`](https://github.com/vinhnx/UnitTestingNetworkWithStub_Demo/blob/master/UnitTestingNetworkWithStub_2/Network/NetworkRequest.swift) protocol that taking care of constructing the endpoint and handle network request, then serialize the data response into model using `URLSession`. [`Conformers`](https://github.com/vinhnx/UnitTestingNetworkWithStub_Demo/blob/master/UnitTestingNetworkWithStub_2/Network/GithubUserRequest.swift) just need to conform to `NetworkRequest` protocol and take advantage of Swift default protocol implementation, it can be [customizable](https://github.com/vinhnx/iOS-notes/issues/47).
 2. Write test cases for [NetworkRequest](https://github.com/vinhnx/UnitTestingNetworkWithStub_Demo/blob/master/UnitTestingNetworkWithStub_2Tests/NetworkRequestTests.swift) and our [model](https://github.com/vinhnx/UnitTestingNetworkWithStub_Demo/blob/master/UnitTestingNetworkWithStub_2Tests/UserTests.swift) using `XCTest` and `Mockingjay` for network stub.
 
-# References #
+# TODO 
+
++ Note to self: learn about `URLProtocol` to write a DIY network stub to even not using `Mockingjay` 🤔
++ UI testing
+
+# References
 
 - https://api.github.com/users/{user_name}
 - https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types
