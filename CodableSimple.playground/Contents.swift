@@ -10,6 +10,14 @@ import XCTest
  public Github profile API "https://api.github.com/users/{user_name}"
  */
 
+// network protocol
+final class NetworkDebugProtocol: URLProtocol {
+    override class func canInit(with request: URLRequest) -> Bool {
+        print("running request: \(request.httpMethod ?? ""). \(request.url?.absoluteString ?? "")")
+        return false
+    }
+}
+
 extension DateFormatter {
     static let customISO8601: DateFormatter = {
         // created_at: "2011-10-03T01:05:57Z",
@@ -142,8 +150,17 @@ extension NetworkRequest {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
 
-        URLSession(configuration: URLSessionConfiguration.default)
-            .dataTask(with: request) { (data, response, error) in
+        let config = URLSessionConfiguration.default
+        config.protocolClasses = [NetworkDebugProtocol.self]
+        config.waitsForConnectivity = true
+
+        config.urlCache?.currentDiskUsage
+        config.urlCache?.currentMemoryUsage
+        config.urlCache?.diskCapacity
+        config.urlCache?.memoryCapacity
+
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
 
                 error.flatMap {
@@ -175,7 +192,9 @@ extension NetworkRequest {
                 completion(.failure(NVError.decoder(error: decoderError)))
             }
 
-            }.resume()
+        }
+
+        task.resume()
     }
 }
 
