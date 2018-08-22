@@ -57,7 +57,7 @@ class NetworkRequestTests: XCTestCase {
                     XCTAssertTrue(user?.userName == "vinhnx")
 
                 case .failure(let error):
-                    fatalError(error.localizedDescription)
+                    XCTFail(error.localizedDescription)
                 }
 
                 expect.fulfill()
@@ -88,7 +88,7 @@ class NetworkRequestTests: XCTestCase {
                     XCTAssertTrue(user?.createdDate == DateFormatter.customISO8601.date(from: "2011-10-03T01:05:57Z"))
 
                 case .failure(let error):
-                    fatalError(error.localizedDescription)
+                    XCTFail(error.localizedDescription)
                 }
 
                 expect.fulfill()
@@ -98,7 +98,7 @@ class NetworkRequestTests: XCTestCase {
             wait(for: [expect], timeout: 10.0)
 
         } catch {
-            fatalError(error.localizedDescription)
+            XCTFail(error.localizedDescription)
         }
     }
 

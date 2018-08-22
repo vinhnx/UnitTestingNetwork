@@ -35,7 +35,7 @@ class UserTests: XCTestCase {
             XCTAssertNotNil(data)
 
         } catch (let encodingError) {
-            print(encodingError)
+            XCTFail(encodingError.localizedDescription)
         }
     }
 
@@ -49,11 +49,11 @@ class UserTests: XCTestCase {
                 XCTAssertNotNil(json)
 
             } catch (let jsonSerializationError) {
-                print(jsonSerializationError)
+                XCTFail(jsonSerializationError.localizedDescription)
             }
 
         } catch (let encodingError) {
-            print(encodingError)
+            XCTFail(encodingError.localizedDescription)
         }
     }
 
@@ -66,7 +66,7 @@ class UserTests: XCTestCase {
             XCTAssertNotNil(jsonString)
 
         } catch (let encodingError) {
-            print(encodingError)
+            XCTFail(encodingError.localizedDescription)
         }
     }
 
@@ -76,7 +76,7 @@ class UserTests: XCTestCase {
             let user = try decoder.decode(User.self, from: self.testUserData)
             XCTAssertTrue(user.createdDate == DateFormatter.customISO8601.date(from: "2011-10-03T01:05:57Z"))
         } catch (let decodingError) {
-            print(decodingError)
+            XCTFail(decodingError.localizedDescription)
         }
     }
 }
