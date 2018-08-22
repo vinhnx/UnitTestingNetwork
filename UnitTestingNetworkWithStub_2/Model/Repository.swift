@@ -9,8 +9,8 @@
 import Foundation
 
 struct Repo: Codable {
-    var fullName: String?
-    var owner: User?
+    let fullName: String?
+    let owner: User?
 
     enum CodingKeys: String, CodingKey {
         case fullName = "full_name"
@@ -20,5 +20,5 @@ struct Repo: Codable {
 
 /// Optional snake case Codable keyDecodingStategy example
 struct SnakeCaseRepo: Codable {
-    var fullName: String?
+    let fullName: String?
 }

@@ -9,9 +9,9 @@
 import Foundation
 
 struct User: Codable {
-    var userName: String?
-    var bio: String?
-    var createdDate: Date?
+    let userName: String?
+    let bio: String?
+    let createdDate: Date?
 
     enum CodingKeys: String, CodingKey {
         case bio
