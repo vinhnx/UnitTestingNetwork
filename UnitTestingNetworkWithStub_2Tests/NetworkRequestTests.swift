@@ -41,12 +41,14 @@ class NetworkRequestTests: XCTestCase {
     func testReturnUserInfo() {
         do {
             var user: User?
-
-            let data = try Data.init(contentsOf: self.dataPath!, options: Data.ReadingOptions.alwaysMapped)
+         
+            // real
             let stubbingURL = uri("https://api.github.com/users/vinhnx")
+            // fake/mock data
+            let data = try Data.init(contentsOf: self.dataPath!, options: Data.ReadingOptions.alwaysMapped)
             let builder = jsonData(data)
 
-            // start faking/stub
+            // start faking/stub real endpoint `stubbingURL`, with mock json `builder`
             self.stub(stubbingURL, builder)
 
             let expect = XCTestExpectation(description: "expecting username matches")
@@ -75,9 +77,13 @@ class NetworkRequestTests: XCTestCase {
         do {
             var user: User?
 
-            let data = try Data.init(contentsOf: self.dataPath!, options: Data.ReadingOptions.alwaysMapped)
+            // real
             let stubbingURL = uri("https://api.github.com/users/vinhnx")
+            // fake/mock data
+            let data = try Data.init(contentsOf: self.dataPath!, options: Data.ReadingOptions.alwaysMapped)
             let builder = jsonData(data)
+         
+            // start faking/stub real endpoint `stubbingURL`, with mock json `builder`
             stub(stubbingURL, builder)
 
             let expect = XCTestExpectation(description: "expecting user created date formatter")
@@ -108,6 +114,8 @@ class NetworkRequestTests: XCTestCase {
         let stubbingURL = uri("https://api.github.com/users/vinhnx")
         let customError = NSError(domain: "com.vinhnx.error.domain", code: 404, userInfo: nil)
         let builder = failure(customError)
+     
+        // start faking/stub real endpoint `stubbingURL`, with mock json `builder`
         stub(stubbingURL, builder)
 
         let expect = XCTestExpectation(description: "expect to return custom error")
